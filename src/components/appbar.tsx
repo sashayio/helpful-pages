@@ -42,7 +42,7 @@ export default function ButtonAppBar(props: AppBarProps) {
         }}
         showLabels
         value={value}
-        onChange={(event, newValue) => {
+        onChange={(_event, newValue) => {
           setValue(newValue);
         }}
       >
