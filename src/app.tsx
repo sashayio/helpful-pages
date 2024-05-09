@@ -1,33 +1,43 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
+import { CssBaseline, PaletteMode, ThemeProvider, createTheme, useMediaQuery } from '@mui/material'
+import Router, { Route } from 'preact-router'
 import './app.css'
+import UuidPage from './pages/uuid';
+import AppBar from './components/appbar';
+import HelloPage from './pages/hello';
+import { useMemo, useState } from 'preact/hooks';
 
 export function App() {
-  const [count, setCount] = useState(0)
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [mode, setMode] = useState<PaletteMode>(prefersDarkMode ? 'dark' : 'light');
+
+  const handleThemeChange = () => {
+    setMode(mode === 'light' ? 'dark' : 'light');
+  };
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: mode
+        },
+      }),
+    [mode],
+  );
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AppBar onThemeChange={handleThemeChange} />
+        <div style={{ margin: "1em 2em" }}>
+          <Router>
+            <Route path="/" default component={HelloPage} />
+            <Route path="/helpful-pages/UUID" component={UuidPage} />
+            {/* <Route path="/helpful-pages/TBD" component={} /> */}
+          </Router>
+        </div>
+      </ThemeProvider>
     </>
   )
 }
