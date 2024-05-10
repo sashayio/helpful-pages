@@ -16,7 +16,7 @@ interface AppBarProps {
 }
 
 export default function ButtonAppBar(props: AppBarProps) {
-  const pages = ['UUID', 'TBD'];
+  const pages = ['UUID', 'RSA', 'TBD'];
   const [currentPage, setCurrentPage] = useState('');
   const theme = useTheme();
   const [themeMode, setThemeMode] = useState(theme.palette.mode);
