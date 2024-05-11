@@ -1,4 +1,4 @@
-import { Box, Container, CssBaseline, PaletteMode, ThemeProvider, createTheme, useMediaQuery } from '@mui/material'
+import { CssBaseline, PaletteMode, ThemeProvider, createTheme, useMediaQuery } from '@mui/material'
 import Router, { Route } from 'preact-router'
 import './app.css'
 import UuidPage from './pages/uuid';

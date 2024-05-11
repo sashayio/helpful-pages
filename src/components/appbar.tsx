@@ -132,10 +132,10 @@ export default function ButtonAppBar(props: AppBarProps) {
       {MainAppBar}
       {/* <MediaQuery minWidth={600}>
         {MainAppBar}
-      </MediaQuery>
-      <MediaQuery maxWidth={600}>
-        {MobileAppBar}
       </MediaQuery> */}
+      <MediaQuery maxWidth={100}>
+        {MobileAppBar}
+      </MediaQuery>
     </>
   );
 }
