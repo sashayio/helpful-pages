@@ -1,4 +1,4 @@
-import { CssBaseline, PaletteMode, ThemeProvider, createTheme, useMediaQuery } from '@mui/material'
+import { Box, Container, CssBaseline, PaletteMode, ThemeProvider, createTheme, useMediaQuery } from '@mui/material'
 import Router, { Route } from 'preact-router'
 import './app.css'
 import UuidPage from './pages/uuid';
@@ -30,13 +30,15 @@ export function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppBar onThemeChange={handleThemeChange} />
-        <div style={{ margin: "1em 2em" }}>
-          <Router>
-            <Route path="/" default component={HelloPage} />
-            <Route path="/helpful-pages/UUID" component={UuidPage} />
-            {/* <Route path="/helpful-pages/TBD" component={} /> */}
-          </Router>
-        </div>
+        {/* <div style={{ margin: "1em 2em" }}> */}
+
+        <Router>
+          <Route path="/" default component={HelloPage} />
+          <Route path="/helpful-pages/UUID" component={UuidPage} />
+          {/* <Route path="/helpful-pages/TBD" component={} /> */}
+        </Router>
+
+        {/* </div> */}
       </ThemeProvider>
     </>
   )

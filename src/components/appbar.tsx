@@ -34,7 +34,7 @@ export default function ButtonAppBar(props: AppBarProps) {
     <Box sx={{
       position: "fixed",
       bottom: 0,
-      width: "100vw"
+      width: "100%",
     }}>
       <BottomNavigation
         sx={{
@@ -81,7 +81,7 @@ export default function ButtonAppBar(props: AppBarProps) {
   );
 
   const MainAppBar = (
-    <AppBar sx={{ boxShadow: 'none', backgroundColor: theme.palette.mode === 'light' ? '#f3f6fc' : '', position: 'static' }}>
+    <AppBar sx={{ boxShadow: 'none', backgroundColor: theme.palette.mode === 'light' ? '#f3f6fc' : '', position: 'fixed' }}>
       <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton sx={{ margin: "auto 8px auto 1em;", height: "fit-content" }} onClick={() => {
@@ -129,12 +129,13 @@ export default function ButtonAppBar(props: AppBarProps) {
 
   return (
     <>
-      <MediaQuery minWidth={600}>
+      {MainAppBar}
+      {/* <MediaQuery minWidth={600}>
         {MainAppBar}
       </MediaQuery>
       <MediaQuery maxWidth={600}>
         {MobileAppBar}
-      </MediaQuery>
+      </MediaQuery> */}
     </>
   );
 }
