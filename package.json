@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && gh-pages && vite build",
+    "build": "tsc && vite build && gh-pages -d gh-pages",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "@mui/material": "^5.15.16",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@types/uuid": "^9.0.8",
+    "gh-pages": "^6.1.1",
     "preact": "^10.19.6",
     "preact-router": "^4.1.2",
     "react-responsive": "^10.0.0",
