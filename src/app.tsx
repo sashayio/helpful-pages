@@ -1,5 +1,6 @@
 import { Box, CssBaseline, PaletteMode, ThemeProvider, createTheme, useMediaQuery } from '@mui/material'
 import Router, { Route } from 'preact-router'
+// import { HashRouter as Router} from "react-router-dom";
 import './app.css'
 import UuidPage from './pages/uuid';
 import AppBar from './components/appbar';
